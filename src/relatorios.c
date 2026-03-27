@@ -33,7 +33,7 @@ void mostrar_dados_rotas(dados_rotas_t *rota, FILE *fp)
     fprintf(fp, "\n......DADOS DA ROTA......\n");
     fprintf(fp, "Código da rota..................: %d\n", rota->codigo_rota);
     fprintf(fp, "Aeronave alocada................: %i\n", rota->id_aeronave);
-    fprintf(fp, "Data do voo.....................: %i/%i/%i \n", rota->data_e_hora.dia, rota->data_e_hora.mes, rota->data_e_hora.ano);
+    fprintf(fp, "Data do voo.....................: %02i/%02i/%02i \n", rota->data_e_hora.dia, rota->data_e_hora.mes, rota->data_e_hora.ano);
     fprintf(fp, "Horario do voo..................: %i:%i \n", rota->data_e_hora.hora, rota->data_e_hora.min);
     fprintf(fp, "Local de partida................: %s\n", rota->local_partida);        
     fprintf(fp, "Local de destino................: %s\n", rota->local_destino);

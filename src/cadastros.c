@@ -94,8 +94,10 @@ dados_rotas_t *nova_rota(dados_aeronaves_t *lista_aeronaves) {
 
     printf("Codigo da rota..................: ");
     scanf("%d", &rota->codigo_rota);
+    while (getchar() != '\n');
     printf("Data (dd/mm/aaaa)...............: ");
     scanf("%i/%i/%i", &rota->data_e_hora.dia, &rota->data_e_hora.mes, &rota->data_e_hora.ano);
+    while (getchar() != '\n');
     printf("Horario (hh:mm).................: ");
     scanf("%i:%i", &rota->data_e_hora.hora, &rota->data_e_hora.min);
     while (getchar() != '\n');
