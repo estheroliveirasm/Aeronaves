@@ -27,12 +27,16 @@ int main ()
                     opc_sub = menu_cadastro();
                     if(opc_sub == 1) {
                         dados_aeronaves_t *nova = nova_aeronave();
-                        if(nova != NULL) inserir_aeronave_lista_pelo_fim(&lista_aeronaves, nova);
-                        mensagem("Aeronave cadastrada com sucesso!");
+                        if(nova != NULL) {
+                            inserir_aeronave_lista_pelo_fim(&lista_aeronaves, nova);
+                            mensagem("Aeronave cadastrada com sucesso!");
+                        }
                     } else if(opc_sub == 2) {
                         dados_rotas_t *nova = nova_rota(lista_aeronaves); 
-                        if(nova != NULL) inserir_rota_lista_pelo_fim(&lista_rotas, nova);
-                        mensagem("Rota cadastrada com sucesso!");
+                        if(nova != NULL){
+                            inserir_rota_lista_pelo_fim(&lista_rotas, nova);
+                            mensagem("Rota cadastrada com sucesso!");
+                        }
                     }
                 } while (opc_sub != 0);
                 break;
@@ -41,6 +45,7 @@ int main ()
                 do {
                     opc_sub = menu_relatorios();
                     if (opc_sub != 0) {
+                        limpar_tela();
                         switch (opc_sub) {
                             case 1: relatorio_aeronaves(lista_aeronaves, stdout); break;
                             case 2: relatorio_rotas(lista_rotas, stdout); break;
