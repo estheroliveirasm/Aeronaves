@@ -52,7 +52,6 @@ int main ()
                             case 3: listar_rotas_maiornumero_passageiros(lista_rotas, stdout); break;
                             case 4: listar_rotas_menornumero_passageiros(lista_rotas, stdout); break;
                         }
-                        mensagem("Pressione ENTER para voltar.");
                     }
                 } while (opc_sub != 0);
                 break;

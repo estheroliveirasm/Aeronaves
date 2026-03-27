@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Função auxiliar para converter data/hora em um número comparável (AAAAMMDDHHMM)
 long long converter_para_long_comparativo(int dia, int mes, int ano, int hora, int min) {
     return (long long)ano * 100000000LL + 
            (long long)mes * 1000000LL + 

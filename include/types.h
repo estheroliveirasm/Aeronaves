@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-
 #define STR_SIZE 100
 #define FIM 0
 #define TRUE 1

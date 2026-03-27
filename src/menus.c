@@ -92,6 +92,7 @@ int menu_consultas_rotas()
     printf("1. Consultar rota por data\n");
     printf("2. Consultar rota por origem\n");
     printf("3. Consultar rota por destino\n");
+    printf("4. Listar rotas por status temporal (Realizadas/Futuras)\n");
     printf("0. Voltar ao menu anterior\n");
     printf("::: ");
     scanf("%i", &opc);
