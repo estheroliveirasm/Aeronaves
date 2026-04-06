@@ -6,4 +6,5 @@ A persistência de dados é feita via arquivos binários, permitindo o armazenam
 Desenvolvedores: Beatriz Goulart e Esther de Oliveira
 
 Instituição: UFSC- Universidade Federal de Santa Catarina
+
 Avaliação: 10/10 - Implementaram todas as funcionalidades do programa conforme estava especificado no enunciado do trabalho. Validaram as entradas de dados para evitar inconsistência de dados.
