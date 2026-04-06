@@ -8,7 +8,7 @@
 
 void limpar_tela()
 {
-    system("clear"); 
+    system("clear || cls"); 
 }
 
 void to_upper_string(char *str)
@@ -32,7 +32,7 @@ int data_maior_ou_igual(data_t primeira_data, data_t segunda_data)
 
 void mensagem(char* msg)
 {
-    printf("%s\n", msg);
+    printf("\n %s\n", msg);
     getchar();
 }
 

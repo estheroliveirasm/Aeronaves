@@ -7,16 +7,16 @@ int menu_principal()
 {
     int opc;
     limpar_tela();
-    printf("...MENU PRINCIPAL...\n");
-    printf("1. Cadastro (Aeronave ou Rota)\n");
-    printf("2. Relatórios\n");
-    printf("3. Buscas e Consultas\n");
-    printf("4. Mudar status da aeronave (Operação/Manutenção)\n");
-    printf("5. Quantidade de manutenções por aeronave\n");
-    printf("6. Arquivos e Exportação\n");
-    printf("0. Sair do programa\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("..........MENU PRINCIPAL..........\n");
+    printf(" 1. Cadastro (Aeronave ou Rota)\n");
+    printf(" 2. Relatorios\n");
+    printf(" 3. Buscas e Consultas\n");
+    printf(" 4. Alterar status da aeronave\n");
+    printf(" 5. Historico de manutencoes\n");
+    printf(" 6. Arquivos e Exportacao\n");
+    printf(" 0. Sair do programa\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -25,12 +25,12 @@ int menu_cadastro()
 {
     int opc;
     limpar_tela();
-    printf("...CADASTRO...\n");
-    printf("1. Cadastrar nova aeronave\n");
-    printf("2. Cadastrar nova rota\n");
-    printf("0. Voltar ao Menu Principal\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("............CADASTRO.............\n");
+    printf(" 1. Cadastrar nova aeronave\n");
+    printf(" 2. Cadastrar nova rota\n");
+    printf(" 0. Voltar ao menu principal\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -39,14 +39,14 @@ int menu_relatorios()
 {
     int opc;
     limpar_tela();
-    printf("...RELATÓRIOS...\n");
-    printf("1. Relatório de todas as aeronaves\n");
-    printf("2. Relatório de todas as rotas\n");
-    printf("3. Listar rotas com maior número de passageiros\n");
-    printf("4. Listar rotas com menor número de passageiros\n");
-    printf("0. Voltar ao Menu Principal\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("...........RELATORIOS............\n");
+    printf(" 1. Listar todas as aeronaves\n");
+    printf(" 2. Listar todas as rotas\n");
+    printf(" 3. Rotas com mais passageiros\n");
+    printf(" 4. Rotas com menos passageiros\n");
+    printf(" 0. Voltar ao menu principal\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -55,13 +55,13 @@ int menu_escolha_consultas()
 {
     int opc;
     limpar_tela();
-    printf("...BUSCAS E CONSULTAS...\n");
-    printf("1. Aeronaves\n");
-    printf("2. Rotas\n");
-    printf("3. Estatísticas\n");
-    printf("0. Voltar ao Menu Principal\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf(".......BUSCAS E CONSULTAS........\n");
+    printf(" 1. Aeronaves\n");
+    printf(" 2. Rotas\n");
+    printf(" 3. Estatisticas\n");
+    printf(" 0. Voltar ao menu principal\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -70,16 +70,16 @@ int menu_consultas_aeronaves()
 {
     int opc;
     limpar_tela();
-    printf("..AERONAVES..\n");
-    printf("1. Buscar aeronave por prefixo (Matrícula)\n");
-    printf("2. Listar aeronaves por fabricante\n");
-    printf("3. Listar aeronaves por tipo (Carga/Passageiro)\n");
-    printf("4. Listar aeronaves por modelo\n");
-    printf("5. Listar aeronaves por ano de fabricação\n");
-    printf("6. Listar aeronaves por situação (Operação/Manutenção)\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("...........AERONAVES.............\n");
+    printf(" 1. Buscar por prefixo (Matricula)\n");
+    printf(" 2. Listar por fabricante\n");
+    printf(" 3. Listar por tipo\n");
+    printf(" 4. Listar por modelo\n");
+    printf(" 5. Listar por ano de fabricacao\n");
+    printf(" 6. Listar por situacao atual\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -88,14 +88,14 @@ int menu_consultas_rotas()
 {
     int opc;
     limpar_tela();
-    printf("..ROTAS..\n");
-    printf("1. Consultar rota por data\n");
-    printf("2. Consultar rota por origem\n");
-    printf("3. Consultar rota por destino\n");
-    printf("4. Listar rotas por status temporal (Realizadas/Futuras)\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("..............ROTAS..............\n");
+    printf(" 1. Consultar rota por data\n");
+    printf(" 2. Consultar rota por origem\n");
+    printf(" 3. Consultar rota por destino\n");
+    printf(" 4. Status temporal (Passadas/Futuras)\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -104,13 +104,13 @@ int menu_consultas_estatisticas()
 {
     int opc;
     limpar_tela();
-    printf("..ESTATÍSTICAS..\n");
-    printf("1. Consultar consumo total de combustível em intervalo de datas\n");
-    printf("2. Verificar percentual de voos por aeronave\n");
-    printf("3. Verificar percentual de voo por destino em intervalo de datas\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("..........ESTATISTICAS...........\n");
+    printf(" 1. Consumo total de combustivel\n");
+    printf(" 2. Percentual de voos por aeronave\n");
+    printf(" 3. Percentual de voos por destino\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -119,13 +119,13 @@ int menu_arquivos()
 {
     int opc;
     limpar_tela();
-    printf("..ARQUIVOS E EXPORTAÇÃO..\n");
-    printf("1. Salvar dados em arquivo binário\n");
-    printf("2. Exportar dados de Aeronaves\n");
-    printf("3. Exportar dados de Rotas\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf("......ARQUIVOS E EXPORTACAO......\n");
+    printf(" 1. Salvar dados (Binario)\n");
+    printf(" 2. Exportar Aeronaves (TXT/CSV/HTML)\n");
+    printf(" 3. Exportar Rotas (TXT/CSV/HTML)\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -134,13 +134,13 @@ int menu_exportar_aeronaves()
 {
     int opc;
     limpar_tela();
-    printf("..EXPORTAR AERONAVES..\n");
-    printf("1. Exportar para TXT\n");
-    printf("2. Exportar para CSV\n");
-    printf("3. Exportar para HTML\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf(".......EXPORTAR AERONAVES........\n");
+    printf(" 1. Formato TXT\n");
+    printf(" 2. Formato CSV\n");
+    printf(" 3. Formato HTML\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }
@@ -149,13 +149,13 @@ int menu_exportar_rotas()
 {
     int opc;
     limpar_tela();
-    printf("..EXPORTAR ROTAS..\n");
-    printf("1. Exportar para TXT\n");
-    printf("2. Exportar para CSV\n");
-    printf("3. Exportar para HTML\n");
-    printf("0. Voltar ao menu anterior\n");
-    printf("::: ");
-    scanf("%i", &opc);
+    printf(".........EXPORTAR ROTAS.........\n");
+    printf(" 1. Formato TXT\n");
+    printf(" 2. Formato CSV\n");
+    printf(" 3. Formato HTML\n");
+    printf(" 0. Voltar ao menu anterior\n");
+    printf(" Opcao: ");
+    scanf("%d", &opc);
     getchar();
     return opc;
 }

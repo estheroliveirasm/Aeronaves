@@ -29,13 +29,13 @@ int main ()
                         dados_aeronaves_t *nova = nova_aeronave();
                         if(nova != NULL) {
                             inserir_aeronave_lista_pelo_fim(&lista_aeronaves, nova);
-                            mensagem("Aeronave cadastrada com sucesso!");
+                            mensagem("Sucesso: Aeronave cadastrada.");
                         }
                     } else if(opc_sub == 2) {
                         dados_rotas_t *nova = nova_rota(lista_aeronaves); 
                         if(nova != NULL){
                             inserir_rota_lista_pelo_fim(&lista_rotas, nova);
-                            mensagem("Rota cadastrada com sucesso!");
+                            mensagem("Sucesso: Rota cadastrada.");
                         }
                     }
                 } while (opc_sub != 0);
@@ -70,7 +70,7 @@ int main ()
                                 case 5: listar_aeronaves_por_fabricacao(lista_aeronaves); break;
                                 case 6: listar_aeronaves_por_situacao(lista_aeronaves); break;
                             }
-                            if(opc_sub_sub != 0) mensagem("Consulta finalizada.");
+                            if(opc_sub_sub != 0) mensagem("Busca finalizada.");
                         } while (opc_sub_sub != 0);
                     } 
                     else if (opc_sub == 2) {
@@ -93,7 +93,7 @@ int main ()
                                 case 2: percentual_voos_por_aeronaves(lista_rotas, lista_aeronaves); break;
                                 case 3: percentual_voos_em_destino_por_intervalo_datas(lista_rotas); break;
                             }
-                            if(opc_sub_sub != 0) mensagem("Estatisticas geradas com sucesso!");
+                            if(opc_sub_sub != 0) mensagem("Estatisticas geradas.");
                         } while (opc_sub_sub != 0);
                     }
                 } while (opc_sub != 0);
@@ -101,12 +101,10 @@ int main ()
 
             case 4:
                 alterar_status_aeronave(&lista_aeronaves);
-                mensagem("Status alterado!");
                 break;
 
             case 5: 
                 buscar_qtd_manutencao_por_aeronaves(lista_aeronaves);
-                mensagem("Busca concluida!");
                 break;
 
             case 6: 
@@ -115,20 +113,20 @@ int main ()
                     if (opc_sub == 1) {
                         salvar_dados_aeronaves_bin(lista_aeronaves, ARQUIVO_AERONAVES);
                         salvar_dados_rotas_bin(lista_rotas, ARQUIVO_ROTAS);
-                        mensagem("Dados salvos em arquivos binarios!");
+                        mensagem("Sucesso: Dados gravados em binario.");
                     } 
                     else if (opc_sub == 2) { 
                         do {
                             opc_sub_sub = menu_exportar_aeronaves();
                             if (opc_sub_sub >= 1 && opc_sub_sub <= 3) {
-                                printf("Digite o nome do arquivo (sem extensao): ");
+                                printf(" Nome do arquivo (sem extensao).....: ");
                                 fgets(nome_arq, STR_SIZE, stdin);
                                 remover_enter(nome_arq);
 
                                 if (opc_sub_sub == 1) { strcat(nome_arq, ".txt"); exportar_aeronaves_txt(lista_aeronaves, nome_arq); }
                                 else if (opc_sub_sub == 2) { strcat(nome_arq, ".csv"); exportar_aeronaves_csv(lista_aeronaves, nome_arq); }
                                 else if (opc_sub_sub == 3) { strcat(nome_arq, ".html"); exportar_aeronaves_html(lista_aeronaves, nome_arq); }
-                                mensagem("Exportacao de aeronaves concluida!");
+                                mensagem("Sucesso: Exportacao concluida.");
                             }
                         } while (opc_sub_sub != 0);
                     } 
@@ -136,14 +134,14 @@ int main ()
                         do {
                             opc_sub_sub = menu_exportar_rotas();
                             if (opc_sub_sub >= 1 && opc_sub_sub <= 3) {
-                                printf("Digite o nome do arquivo (sem extensao): ");
+                                printf(" Nome do arquivo (sem extensao).....: ");
                                 fgets(nome_arq, STR_SIZE, stdin);
                                 remover_enter(nome_arq);
 
                                 if (opc_sub_sub == 1) { strcat(nome_arq, ".txt"); exportar_rotas_txt(lista_rotas, nome_arq); }
                                 else if (opc_sub_sub == 2) { strcat(nome_arq, ".csv"); exportar_rotas_csv(lista_rotas, nome_arq); }
                                 else if (opc_sub_sub == 3) { strcat(nome_arq, ".html"); exportar_rotas_html(lista_rotas, nome_arq); }
-                                mensagem("Exportacao de rotas concluida!");
+                                mensagem("Sucesso: Exportacao concluida.");
                             }
                         } while (opc_sub_sub != 0);
                     }
@@ -151,10 +149,10 @@ int main ()
                 break;
 
             case 0: 
-                printf("Saindo do programa e salvando dados...\n");
+                printf("\n Finalizando sistema e salvando dados...\n");
                 salvar_dados_aeronaves_bin(lista_aeronaves, ARQUIVO_AERONAVES);
                 salvar_dados_rotas_bin(lista_rotas, ARQUIVO_ROTAS);
-                printf("Dados salvos em arquivos binários.");
+                printf(" Banco de dados atualizado com sucesso.\n");
                 break;
         }
 

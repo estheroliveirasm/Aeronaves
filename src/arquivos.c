@@ -14,7 +14,7 @@ void limpar_buffer() {
 void salvar_dados_aeronaves_bin(dados_aeronaves_t *lista, string nome_arq) {
     FILE *fp = fopen(nome_arq, "wb"); 
     if (!fp) {
-        printf("Erro na abertura do arquivo %s para salvar aeronaves.\n", nome_arq);
+        printf("\n Erro ao salvar o arquivo aeronaves: %s\n", nome_arq);
         return;
     }
     dados_aeronaves_t *atual = lista;
@@ -28,7 +28,7 @@ void salvar_dados_aeronaves_bin(dados_aeronaves_t *lista, string nome_arq) {
 void ler_dados_aeronaves_bin(string nome_arq, dados_aeronaves_t **lista) {
     FILE *fp = fopen(nome_arq, "rb");
     if (!fp) {
-        printf("Arquivo %s não encontrado. Criando lista vazia.\n", nome_arq);
+        printf("\n Arquivo %s nao encontrado. Iniciando novo banco de dados...\n", nome_arq);
         return;
     }
     *lista = NULL;
@@ -50,7 +50,7 @@ void ler_dados_aeronaves_bin(string nome_arq, dados_aeronaves_t **lista) {
 void salvar_dados_rotas_bin(dados_rotas_t *lista, string nome_arq) {
     FILE *fp = fopen(nome_arq, "wb");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao salvar o arquivo rotas: %s\n", nome_arq);
         return;
     }
     dados_rotas_t *atual = lista;
@@ -64,7 +64,7 @@ void salvar_dados_rotas_bin(dados_rotas_t *lista, string nome_arq) {
 void ler_dados_rotas_bin(string nome_arq, dados_rotas_t **lista) {
     FILE *fp = fopen(nome_arq, "rb");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Arquivo %s nao encontrado. Iniciando novo banco de dados...\n", nome_arq);
         return;
     }
     *lista = NULL;
@@ -86,7 +86,7 @@ void ler_dados_rotas_bin(string nome_arq, dados_rotas_t **lista) {
 void exportar_aeronaves_txt(dados_aeronaves_t *lista_aeronaves, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo de texto: %s\n", nome_arq);
         return;
     }
     dados_aeronaves_t *atual = lista_aeronaves;
@@ -96,13 +96,14 @@ void exportar_aeronaves_txt(dados_aeronaves_t *lista_aeronaves, string nome_arq)
         atual = atual->prox;
     }
     fclose(fp);
-    printf("Dados de aeronaves exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de aeronaves exportados com sucesso para TXT.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }
 
 void exportar_aeronaves_csv(dados_aeronaves_t *lista_aeronaves, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo CSV: %s\n", nome_arq);
         return;
     }
     fprintf(fp, "ID;MATRICULA;MODELO;FABRICANTE;ANO;TIPO;STATUS;PASSAGEIROS;CARGA;TRIPULANTES;MANUTENCOES\n");
@@ -119,13 +120,14 @@ void exportar_aeronaves_csv(dados_aeronaves_t *lista_aeronaves, string nome_arq)
         atual = atual->prox;
     }
     fclose(fp);
-    printf("Dados de aeronaves exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de aeronaves exportados com sucesso para CSV.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }
 
 void exportar_aeronaves_html(dados_aeronaves_t *lista_aeronaves, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo HTML: %s\n", nome_arq);
         return;
     }
     fprintf(fp, "<html><head><meta charset='UTF-8'><style>table{width:100%%;border-collapse:collapse;}th,td{border:1px solid #ddd;padding:8px;text-align:left;}th{background-color:#4CAF50;color:white;}tr:nth-child(even){background-color:#f2f2f2;}</style></head><body>");
@@ -141,13 +143,14 @@ void exportar_aeronaves_html(dados_aeronaves_t *lista_aeronaves, string nome_arq
     }
     fprintf(fp, "</table></body></html>");
     fclose(fp);
-    printf("Dados de aeronaves exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de aeronaves exportados com sucesso para HTML.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }
 
 void exportar_rotas_txt(dados_rotas_t *lista_rotas, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo de texto: %s\n", nome_arq);
         return;
     }
     dados_rotas_t *atual = lista_rotas;
@@ -157,16 +160,17 @@ void exportar_rotas_txt(dados_rotas_t *lista_rotas, string nome_arq) {
         atual = atual->prox;
     }
     fclose(fp);
-    printf("Dados de rotas exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de rotas exportados com sucesso para TXT.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }
 
 void exportar_rotas_csv(dados_rotas_t *lista_rotas, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo CSV: %s\n", nome_arq);
         return;
     }
-    fprintf(fp, "CODIGO;ID_AERO;DATA;HORA;ORIGEM;DESTINO;DURACAO;COMBUSTIVEL;PASSAGEIROS;CARGA;TRIPULACAO\n");
+    fprintf(fp, "CODIGO;ID_AERONAVE;DATA;HORA;ORIGEM;DESTINO;DURACAO;COMBUSTIVEL;PASSAGEIROS;CARGA;TRIPULACAO\n");
     
     dados_rotas_t *atual = lista_rotas;
     while (atual) {
@@ -180,13 +184,14 @@ void exportar_rotas_csv(dados_rotas_t *lista_rotas, string nome_arq) {
         atual = atual->prox;
     }
     fclose(fp);
-    printf("Dados de rotas exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de rotas exportados com sucesso para CSV.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }
 
 void exportar_rotas_html(dados_rotas_t *lista_rotas, string nome_arq) {
     FILE *fp = fopen(nome_arq, "w");
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo.\n");
+        printf("\n Erro ao abrir o arquivo HTML: %s\n", nome_arq);
         return;
     }
     fprintf(fp, "<html><head><meta charset='UTF-8'><style>table{width:100%%;border-collapse:collapse;}th,td{border:1px solid #ddd;padding:8px;text-align:left;}th{background-color:#2196F3;color:white;}tr:nth-child(even){background-color:#f9f9f9;}</style></head><body>");
@@ -203,5 +208,6 @@ void exportar_rotas_html(dados_rotas_t *lista_rotas, string nome_arq) {
     }
     fprintf(fp, "</table></body></html>");
     fclose(fp);
-    printf("Dados de rotas exportados com sucesso para %s\n", nome_arq);
+    printf("\n Dados de rotas exportados com sucesso para HTML.\n");
+    printf(" Arquivo gerado: %s\n", nome_arq);
 }

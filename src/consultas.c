@@ -23,8 +23,8 @@ void buscar_aeronave_por_prefixo(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......BUSCAR AERONAVE POR PREFIXO (MATRÍCULA)......\n");
-    printf("Digite o prefixo (matrícula) da aeronave: ");
+    printf(".....BUSCAR AERONAVE POR PREFIXO.....\n");
+    printf("Digite o prefixo (matricula)........: ");
     fgets(buscar_prefixo, STR_SIZE, stdin);
     remover_enter(buscar_prefixo);
     to_upper_string(buscar_prefixo);
@@ -39,10 +39,10 @@ void buscar_aeronave_por_prefixo(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave encontrada com o prefixo informado!\n");
+        printf(" Nenhuma aeronave encontrada com o prefixo informado.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_aeronaves_por_fabricante(dados_aeronaves_t *lista)
@@ -51,13 +51,13 @@ void listar_aeronaves_por_fabricante(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......LISTAR AERONAVE POR FABRICANTE......\n");
-    printf("Digite o nome do fabricante: ");
+    printf("....LISTAR AERONAVE POR FABRICANTE...\n");
+    printf("Digite o nome do fabricante.........: ");
     fgets(buscar_fabricante, STR_SIZE, stdin);
     remover_enter(buscar_fabricante);
     to_upper_string(buscar_fabricante);
 
-    printf("Aeronaves do fabricante %s: \n", buscar_fabricante);
+    printf("\n Aeronaves do fabricante %s:\n", buscar_fabricante);
 
     while(atual != NULL){
         if(strcmp(atual->fabricante, buscar_fabricante) == 0){
@@ -68,10 +68,10 @@ void listar_aeronaves_por_fabricante(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave encontrada com o fabricante informado!\n");
+        printf(" Nenhuma aeronave encontrada para este fabricante.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_aeronaves_por_tipo(dados_aeronaves_t *lista)
@@ -80,22 +80,22 @@ void listar_aeronaves_por_tipo(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......LISTAR AERONAVE POR TIPO (CARGA OU PASSAGEIRO)......\n");
-    printf("Digite o tipo da aeronave (1- CARGA OU 2- PASSAGEIRO): ");
+    printf(".......LISTAR AERONAVE POR TIPO......\n");
+    printf("Tipo (1- CARGA | 2- PASSAGEIRO).....: ");
     scanf("%i", &tipo_escolhido);
     while (getchar() != '\n');
 
     if(tipo_escolhido != CARGA && tipo_escolhido != PASSAGEIRO) {
-        printf("\nTipo de aeronave inválido!\n");
-        mensagem("Pressione ENTER para continuar!");
+        printf("\n Erro: Tipo de aeronave invalido.\n");
+        mensagem("Pressione ENTER para continuar.");
         return;
     }
 
     if(tipo_escolhido == CARGA){
-        printf("Aeronaves de carga: \n");
+        printf("\n Aeronaves de carga:\n");
     }
     else {
-        printf("Aeronaves de passageiros: \n");
+        printf("\n Aeronaves de passageiros:\n");
     }
 
     while(atual != NULL) {
@@ -107,10 +107,10 @@ void listar_aeronaves_por_tipo(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave encontrada com o tipo informado!\n");
+        printf(" Nenhuma aeronave encontrada para o tipo informado.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_aeronaves_por_modelo(dados_aeronaves_t *lista)
@@ -119,13 +119,13 @@ void listar_aeronaves_por_modelo(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......BUSCAR AERONAVE POR MODELO......\n");
-    printf("Digite o modelo da aeronave: ");
+    printf("......BUSCAR AERONAVE POR MODELO.....\n");
+    printf("Digite o modelo da aeronave.........: ");
     fgets(buscar_modelo, STR_SIZE, stdin);
     remover_enter(buscar_modelo);
     to_upper_string(buscar_modelo);
 
-    printf("Aeronaves do modelo: %s: \n", buscar_modelo);
+    printf("\n Aeronaves do modelo %s:\n", buscar_modelo);
 
     while(atual != NULL){
         if(strcmp(atual->modelo, buscar_modelo) == 0){
@@ -136,10 +136,10 @@ void listar_aeronaves_por_modelo(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave encontrada com o modelo informado!\n");
+        printf(" Nenhuma aeronave encontrada para este modelo.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_aeronaves_por_fabricacao(dados_aeronaves_t *lista)
@@ -148,12 +148,12 @@ void listar_aeronaves_por_fabricacao(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......LISTAR AERONAVES POR ANO DE FABRICAÇÃO......\n");
-    printf("Digite o ano de fabricação da aeronave: ");
+    printf("...LISTAR POR ANO DE FABRICACAO.....\n");
+    printf("Digite o ano de fabricacao..........: ");
     scanf("%i", &buscar_ano);
     while(getchar() != '\n');
 
-    printf("Aeronaves fabricadas no ano de %i: \n", buscar_ano);
+    printf("\n Aeronaves fabricadas no ano %i:\n", buscar_ano);
 
     while(atual != NULL){
         if(atual->ano_fabricacao == buscar_ano){
@@ -164,10 +164,10 @@ void listar_aeronaves_por_fabricacao(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave fabricada no ano informado encontrada!\n");
+        printf(" Nenhuma aeronave fabricada no ano informado.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_aeronaves_por_situacao(dados_aeronaves_t *lista)
@@ -176,22 +176,22 @@ void listar_aeronaves_por_situacao(dados_aeronaves_t *lista)
     int encontrou = FALSE;
     dados_aeronaves_t *atual = lista;
 
-    printf("......LISTAR AERONAVE POR SITUAÇÃO (OPERAÇÃO OU MANUTENÇÃO)......\n");
-    printf("Digite a situação das aeronaves (1- Em operação ou 2- Em manutenção): ");
+    printf(".....LISTAR AERONAVE POR SITUACAO....\n");
+    printf("Status (1- OPERACAO | 2- MANUTENCAO): ");
     scanf("%i", &situacao_escolhida);
     while (getchar() != '\n');
 
     if(situacao_escolhida != OPERACAO && situacao_escolhida != MANUTENCAO) {
-        printf("\nSituação de aeronave inválida!\n");
-        mensagem("Pressione ENTER para continuar!");
+        printf("\n Erro: Situacao invalida.\n");
+        mensagem("Pressione ENTER para continuar.");
         return;
     }
 
     if(situacao_escolhida == OPERACAO){
-        printf("Aeronaves em operação: \n");
+        printf("\n Aeronaves em operacao:\n");
     }
     else {
-        printf("Aeronaves em manutenção: \n");
+        printf("\n Aeronaves em manutencao:\n");
     }
 
     while(atual != NULL) {
@@ -203,10 +203,10 @@ void listar_aeronaves_por_situacao(dados_aeronaves_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma aeronave encontrada com a situação informada!\n");
+        printf(" Nenhuma aeronave encontrada nesta situacao.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void consultar_rota_por_data(dados_rotas_t *lista)
@@ -215,12 +215,12 @@ void consultar_rota_por_data(dados_rotas_t *lista)
     int encontrou = FALSE;
     dados_rotas_t *atual = lista;
 
-    printf("......CONSULTAR ROTA POR DATA......\n");
-    printf("Digite a data do voo (dd/mm/aaaa): ");
+    printf(".......CONSULTAR ROTA POR DATA.......\n");
+    printf("Digite a data (dd/mm/aaaa)..........: ");
     scanf("%i/%i/%i", &buscar_data.dia, &buscar_data.mes, &buscar_data.ano);
     getchar();
 
-    printf("Rotas na data %i/%i/%i:\n", buscar_data.dia, buscar_data.mes, buscar_data.ano);
+    printf("\n Rotas para o dia %02i/%02i/%i:\n", buscar_data.dia, buscar_data.mes, buscar_data.ano);
 
     while(atual != NULL){
         if(atual->data_e_hora.dia == buscar_data.dia &&
@@ -233,10 +233,10 @@ void consultar_rota_por_data(dados_rotas_t *lista)
     }
 
     if(encontrou == FALSE){
-        printf("Nenhuma rota encontrada com a data informada!");
+        printf(" Nenhuma rota localizada para esta data.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void consultar_rota_por_origem(dados_rotas_t *lista)
@@ -246,7 +246,7 @@ void consultar_rota_por_origem(dados_rotas_t *lista)
     dados_rotas_t *atual = lista;
 
     printf("......CONSULTAR ROTA POR ORIGEM......\n");
-    printf("Digite o local de origem: ");
+    printf("Digite o local de origem............: ");
     fgets(buscar_origem, STR_SIZE, stdin);
     remover_enter(buscar_origem);
     to_upper_string(buscar_origem);
@@ -260,10 +260,10 @@ void consultar_rota_por_origem(dados_rotas_t *lista)
     }
 
     if (encontrou == FALSE){
-        printf("Nenhuma rota encontrada para a origem informada!");
+        printf(" Nenhuma rota encontrada para a origem informada.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void consultar_rota_por_destino(dados_rotas_t *lista)
@@ -272,13 +272,13 @@ void consultar_rota_por_destino(dados_rotas_t *lista)
     int encontrou = FALSE;
     dados_rotas_t *atual = lista;
 
-    printf("......CONSULTAR ROTA POR DESTINO......\n");
-    printf("Digite o local de destino: ");
+    printf(".....CONSULTAR ROTA POR DESTINO......\n");
+    printf("Digite o local de destino...........: ");
     fgets(buscar_destino, STR_SIZE, stdin);
     remover_enter(buscar_destino);
     to_upper_string(buscar_destino);
 
-    printf("Rotas com destino em %s: \n", buscar_destino);
+    printf("\n Rotas com destino em %s:\n", buscar_destino);
 
     while(atual != NULL){
         if(strcmp(atual->local_destino, buscar_destino) == 0){
@@ -289,17 +289,17 @@ void consultar_rota_por_destino(dados_rotas_t *lista)
     }
 
     if (encontrou == FALSE){
-        printf("Nenhuma rota encontrada para o destino informado!");
+        printf(" Nenhuma rota encontrada para o destino informado.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
+    mensagem("Pressione ENTER para continuar.");
 }
 
 void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
 {
     if (lista_rotas == NULL) {
-        printf("Nenhuma rota cadastrada!\n");
-        mensagem("Pressione ENTER para continuar!");
+        printf(" Nenhuma rota cadastrada.\n");
+        mensagem("Pressione ENTER para continuar.");
         return;
     }
 
@@ -314,7 +314,7 @@ void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
         data_atual.tm_min
     );
 
-    printf("\n......ROTAS JÁ REALIZADAS......\n");
+    printf("\n.......ROTAS FINALIZADAS........\n");
     dados_rotas_t *atual = lista_rotas;
     int encontrou_passado = FALSE;
     while (atual) {
@@ -323,7 +323,7 @@ void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
             atual->data_e_hora.hora, atual->data_e_hora.min
         );
         if (data_rota < agora) {
-            printf("[%02i/%02i/%i %02i:%02i] Código: %i | %s -> %s\n",
+            printf(" [%02i/%02i/%i %02i:%02i] Codigo: %i | %s -> %s\n",
                    atual->data_e_hora.dia, atual->data_e_hora.mes, atual->data_e_hora.ano,
                    atual->data_e_hora.hora, atual->data_e_hora.min,
                    atual->codigo_rota, atual->local_partida, atual->local_destino);
@@ -331,9 +331,9 @@ void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
         }
         atual = atual->prox;
     }
-    if (!encontrou_passado) printf("Nenhuma rota encontrada no passado.\n");
+    if (!encontrou_passado) printf(" Nenhuma rota finalizada encontrada.\n");
 
-    printf("\n......PRÓXIMAS ROTAS......\n");
+    printf("\n........PROXIMAS ROTAS.........\n");
     atual = lista_rotas;
     int encontrou_futuro = FALSE;
     while (atual) {
@@ -342,7 +342,7 @@ void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
             atual->data_e_hora.hora, atual->data_e_hora.min
         );
         if (data_rota >= agora) {
-            printf("[%02i/%02i/%i %02i:%02i] Código: %i | %s -> %s\n",
+            printf(" [%02i/%02i/%i %02i:%02i] Codigo: %i | %s -> %s\n",
                    atual->data_e_hora.dia, atual->data_e_hora.mes, atual->data_e_hora.ano,
                    atual->data_e_hora.hora, atual->data_e_hora.min,
                    atual->codigo_rota, atual->local_partida, atual->local_destino);
@@ -350,9 +350,9 @@ void listar_rotas_por_status_temporal(dados_rotas_t *lista_rotas)
         }
         atual = atual->prox;
     }
-    if (!encontrou_futuro) printf("Nenhuma rota agendada para o futuro.\n");
+    if (!encontrou_futuro) printf(" Nenhuma rota agendada encontrada.\n");
     
-    mensagem("\nPressione ENTER para voltar!");
+    mensagem("\nPressione ENTER para voltar.");
 }
 
 double consumototal_combustivel_por_data(dados_rotas_t *lista)
@@ -362,13 +362,12 @@ double consumototal_combustivel_por_data(dados_rotas_t *lista)
     dados_rotas_t *atual = lista;
     int encontrou_voo = FALSE;
 
-    printf("......CONSULTAR CONSUMO TOTAL DE COMBUSTÍVEL EM INTERVALOS DE DATAS......\n");
-    
-    printf("Data de início do intervalo (dd/mm/aaaa): ");
+    printf(".......CONSUMO DE COMBUSTIVEL........\n");
+    printf("Data inicial (dd/mm/aaaa)...........: ");
     scanf("%i/%i/%i", &data_inicio.dia, &data_inicio.mes, &data_inicio.ano);
     while(getchar() != '\n');
 
-    printf("Data de fim do intervalo (dd/mm/aaaa): ");
+    printf("Data final (dd/mm/aaaa).............: ");
     scanf("%i/%i/%i", &data_fim.dia, &data_fim.mes, &data_fim.ano);
     while(getchar() != '\n');
 
@@ -385,17 +384,16 @@ double consumototal_combustivel_por_data(dados_rotas_t *lista)
         atual = atual->prox;
     }
 
-    printf("......RESULTADO DE CONSUMO......\n");
-    printf("Intervalo: %i/%i/%i a %i/%i/%i\n", data_inicio.dia, data_inicio.mes, data_inicio.ano, data_fim.dia, data_fim.mes, data_fim.ano);
+    printf("\n.......RESULTADO DO CONSUMO.........\n");
+    printf(" Periodo: %02i/%02i/%i a %02i/%02i/%i\n", data_inicio.dia, data_inicio.mes, data_inicio.ano, data_fim.dia, data_fim.mes, data_fim.ano);
     
     if(encontrou_voo == FALSE) {
-        printf("Nenhuma rota encontrada nesse intervalo!\n");
+        printf(" Nenhuma rota encontrada para o periodo.\n");
     } else {
-        printf("Consumo total de combustível no período: %.2f Litros\n", consumo_total);
+        printf(" Consumo total: %.2f Litros\n", consumo_total);
     }
 
-    mensagem("Pressione ENTER para continuar!");
-
+    mensagem("Pressione ENTER para continuar.");
     return consumo_total;
 }
 
@@ -408,22 +406,22 @@ double percentual_voos_por_aeronaves(dados_rotas_t *lista_rotas, dados_aeronaves
     dados_aeronaves_t *aeronave_buscada = NULL;
     double percentual = 0.0;
 
-    printf("......PERCENTUAL DE VOOS POR AERONAVE......\n");
+    printf(".....PERCENTUAL DE VOOS POR AERONAVE....\n");
 
     if(lista_rotas == NULL){
-        printf("Nenhuma rota cadastrada para calcular o percentual!\n");
-        mensagem("Pressione ENTER para continuar!");
+        printf(" Nenhuma rota cadastrada para o calculo.\n");
+        mensagem("Pressione ENTER para continuar.");
         return 0.0;
     }
 
-    printf("Digite o ID da aeronave: ");
+    printf("Digite o ID da aeronave...........: ");
     scanf("%i", &id_procurado);
     while(getchar() != '\n');
 
     aeronave_buscada = localizar_aeronave_por_id(id_procurado, lista_aeronaves);
     if(aeronave_buscada == NULL){
-        printf("Aeronave com ID: %i não encontrada!\n", id_procurado);
-        mensagem("Pressione ENTER para continuar!");
+        printf(" Erro: Aeronave ID %i nao encontrada.\n", id_procurado);
+        mensagem("Pressione ENTER para continuar.");
         return 0.0;
     }
 
@@ -437,18 +435,15 @@ double percentual_voos_por_aeronaves(dados_rotas_t *lista_rotas, dados_aeronaves
     
     if (total_rotas != 0) {
         percentual = (double)voos_aeronave / total_rotas * 100.0;
-    } else {
-        percentual = 0.0;
     }
 
-    printf("......RESULTADO DO PERCENTUAL......\n");
-    printf("Aeronave: %s (ID %i)\n", aeronave_buscada->matricula, id_procurado);
-    printf("Total de rotas cadastradas: %i\n", total_rotas);
-    printf("Voos realizados pela aeronave: %i\n", voos_aeronave);
-    printf("Percentual de voos realizados pela aeronave: %.2f%%\n", percentual);
+    printf("\n.......RESULTADO DO PERCENTUAL.......\n");
+    printf(" Aeronave: %s (ID %i)\n", aeronave_buscada->matricula, id_procurado);
+    printf(" Total de rotas do sistema: %i\n", total_rotas);
+    printf(" Voos desta aeronave: %i\n", voos_aeronave);
+    printf(" Participacao no total: %.2f%%\n", percentual);
 
-    mensagem("Pressione ENTER para continuar!");
-
+    mensagem("Pressione ENTER para continuar.");
     return percentual;
 }
 
@@ -460,26 +455,26 @@ double percentual_voos_em_destino_por_intervalo_datas(dados_rotas_t *lista)
     int voos_no_destino = 0;
     dados_rotas_t *atual = lista;
 
-    printf("......VERIFICAR O PERCENTUAL DE VOOS POR DESTINO EM INTERVALO DE DATAS......\n");
+    printf(".......PERCENTUAL POR DESTINO........\n");
 
     if(lista == NULL){
-        printf("Nenhuma rota cadastrada para calcular o percentual!\n");
-        mensagem("Pressione ENTER para continuar!");
+        printf(" Nenhuma rota cadastrada para o calculo.\n");
+        mensagem("Pressione ENTER para continuar.");
         return 0.0;
     }
 
-    printf("Data de início do intervalo (dd/mm/aaaa): ");
+    printf("Data inicial (dd/mm/aaaa)...........: ");
     scanf("%i/%i/%i", &data_inicio.dia, &data_inicio.mes, &data_inicio.ano);
     while(getchar () != '\n');
 
-    printf("Data de fim do intervalo (dd/mm/aaaa): ");
+    printf("Data final (dd/mm/aaaa).............: ");
     scanf("%i/%i/%i", &data_fim.dia, &data_fim.mes, &data_fim.ano);
     while(getchar() != '\n');
 
     long long inicio = converter_para_long_comparativo(data_inicio.dia, data_inicio.mes, data_inicio.ano, 0, 0);
     long long fim = converter_para_long_comparativo(data_fim.dia, data_fim.mes, data_fim.ano, 23, 59);
 
-    printf("Destino a ser verificado: ");
+    printf("Destino para verificacao............: ");
     fgets(destino_procurado, STR_SIZE, stdin);
     remover_enter(destino_procurado);
     to_upper_string(destino_procurado);
@@ -497,21 +492,20 @@ double percentual_voos_em_destino_por_intervalo_datas(dados_rotas_t *lista)
     }
 
     if(voos_no_intervalo == 0){
-        printf("Nenhuma rota encontrada nesse intervalo!");
-        mensagem("Pressione ENTER para continuar!");
+        printf(" Nenhuma rota encontrada no periodo.\n");
+        mensagem("Pressione ENTER para continuar.");
         return 0.0;
     }
 
     double percentual = (double)voos_no_destino / voos_no_intervalo * 100.0;
 
-    printf("......RESULTADO DO PERCENTUAL...... \n");
-    printf("Intervalo: %i/%i/%i a %i/%i/%i\n", data_inicio.dia, data_inicio.mes, data_inicio.ano, data_fim.dia, data_fim.mes, data_fim.ano);
-    printf("Total de voos no intervalo: %i\n", voos_no_intervalo);
-    printf("Voos para o destino %s no intervalo: %i\n", destino_procurado, voos_no_destino);
-    printf("Percentual de voos para o destino: %.2f%%\n", percentual);
+    printf("\n.......RESULTADO DO PERCENTUAL.......\n");
+    printf(" Periodo: %02i/%02i/%i a %02i/%02i/%i\n", data_inicio.dia, data_inicio.mes, data_inicio.ano, data_fim.dia, data_fim.mes, data_fim.ano);
+    printf(" Total de voos no periodo: %i\n", voos_no_intervalo);
+    printf(" Voos para %s: %i\n", destino_procurado, voos_no_destino);
+    printf(" Participacao do destino: %.2f%%\n", percentual);
 
-    mensagem("Pressione ENTER para continuar!");
-
+    mensagem("Pressione ENTER para continuar.");
     return percentual;
 }
 
@@ -520,26 +514,21 @@ int buscar_qtd_manutencao_por_aeronaves(dados_aeronaves_t *lista)
     int id_procurado;
     dados_aeronaves_t *aeronave = NULL;
 
-    printf("......QUANTIDADE DE VEZES QUE A AERONAVE ENTROU EM MANUTENÇÃO......\n");
-    printf("Digite o ID da aeronave: ");
+    printf(".......HISTORICO DE MANUTENCAO.......\n");
+    printf("Digite o ID da aeronave...........: ");
     scanf("%i", &id_procurado);
     while (getchar() != '\n');
 
     aeronave = localizar_aeronave_por_id(id_procurado, lista);
 
     if(aeronave != NULL){
-        int manutencoes = aeronave->qtd_manutencoes;
-        printf("Aeronave ID: %i (%s) entrou em manutenção: %i vezes.\n", id_procurado, aeronave->matricula, manutencoes);
+        printf("\n Aeronave: %s (ID %i)\n", aeronave->matricula, id_procurado);
+        printf(" Total de manutencoes registradas: %i\n", aeronave->qtd_manutencoes);
     }
     else{
-        printf("Aeronave não encontrada!");
+        printf(" Erro: Aeronave nao encontrada.\n");
     }
 
-    mensagem("Pressione ENTER para continuar!");
-    if(aeronave != NULL){
-        return aeronave->qtd_manutencoes;
-    }
-    else{
-        return 0;
-    }
+    mensagem("Pressione ENTER para continuar.");
+    return (aeronave != NULL) ? aeronave->qtd_manutencoes : 0;
 }
