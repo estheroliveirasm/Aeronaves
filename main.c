@@ -29,13 +29,13 @@ int main ()
                         dados_aeronaves_t *nova = nova_aeronave();
                         if(nova != NULL) {
                             inserir_aeronave_lista_pelo_fim(&lista_aeronaves, nova);
-                            mensagem("Sucesso: Aeronave cadastrada.");
+                            mensagem("Sucesso! Aeronave cadastrada.");
                         }
                     } else if(opc_sub == 2) {
                         dados_rotas_t *nova = nova_rota(lista_aeronaves); 
                         if(nova != NULL){
                             inserir_rota_lista_pelo_fim(&lista_rotas, nova);
-                            mensagem("Sucesso: Rota cadastrada.");
+                            mensagem("Sucesso! Rota cadastrada.");
                         }
                     }
                 } while (opc_sub != 0);
