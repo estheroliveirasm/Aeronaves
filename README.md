@@ -1,5 +1,5 @@
 # Aeronaves - Gerenciador de Frota e Logística Aérea
-Este sistema, desenvolvido para a disciplina de Linguagem de Programação 1, gerencia aeronaves e rotas (cadastros, relatórios e consultas) utilizando listas encadeadas para otimização de memória. O software suporta aeronaves de carga e passageiros, controlando disponibilidades, manutenções e limites operacionais.
+Este sistema, desenvolvido para a disciplina de Linguagem de Programação 1 (DEC0012-01655A - 2025.2), gerencia aeronaves e rotas (cadastros, relatórios e consultas) utilizando listas encadeadas para otimização de memória. O software suporta aeronaves de carga e passageiros, controlando disponibilidades, manutenções e limites operacionais.
 
 A persistência de dados é feita via arquivos binários, permitindo o armazenamento eficiente de estruturas complexas. Além da interface via terminal, o projeto exporta relatórios nos formatos TXT, CSV e HTML para integração com planilhas e navegadores. O sistema também processa estatísticas de voo, como consumo de combustível e aproveitamento da frota.
 
